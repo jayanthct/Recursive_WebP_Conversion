@@ -30,47 +30,39 @@ Modern web performance requires efficient image formats. This project provides a
 ## Prerequisites
 
 * **Node.js:** v16.x or higher
-* **npm** or **yarn**
+* **npm**
 
 ## Installation
 
 1. Clone the repository:
    ```bash
    git clone [https://github.com/jayanthct/Recursive_WebP_Conversion.git](https://github.com/jayanthct/Recursive_WebP_Conversion.git)
-   cd image-to-webp-converter
+   cd webp_conversion
 
-```
-
-2. Install dependencies:
+2. Ensure you have `typescript` and `ts-node` installed:
 ```bash
-npm install
-
-```
-
-3. Ensure you have `typescript` and `ts-node` installed:
-```bash
-npm install -g typescript ts-node
+npm install -g typescript ts-node sharp
 
 ```
 
 ## Usage
 
-1. Place your source images in the directory specified in the script (default: `../help-section/help-section-images`).
+1. Place your source images in the directory specified in the script.
 2. Run the conversion script:
 ```bash
-ts-node src/converter.ts
+node recursiveWebPconversion.ts
 
 ```
 
-3. Optimized images will be generated in the output directory (default: `../help-section/help-section-2`).
+3. Optimized images will be generated in the output directory.
 
 ## Configuration
 
-You can adjust the quality settings in `converter.ts`:
+You can adjust the quality settings in `recursiveWebPconversion.ts`:
 
 ```typescript
 await sharp(inputPath)
-  .webp({ quality: 80 }) // Adjust quality from 1-100
+  .webp({ quality: 100 }) // Adjust quality from 1-100
   .toFile(outputPath);
 
 ```
